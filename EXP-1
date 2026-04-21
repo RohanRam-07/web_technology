@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hotel Booking System</title>
+</head>
+<body>
+
+<h1>🏨 RAJALAKSHMI HOTEL BOOKING SYSTEM</h1>
+<hr />
+
+<!-- NAVIGATION -->
+<p>
+  <a href="#rooms">Rooms</a> |
+  <a href="#booking">Book Now</a> |
+  <a href="#contact">Contact</a> |
+  <a href="#about">About Us</a>
+</p>
+
+<hr />
+
+<!-- ABOUT -->
+<h2 id="about">About Our Hotel</h2>
+<p>Welcome to <b>Rajalakshmi Hotels &amp; Resorts</b> — a five-star luxury hotel established in 1924.</p>
+<p>We offer world-class accommodation, fine dining, a spa, and concierge services across our global properties.</p>
+<p><b>Address:</b> 12 Grand Boulevard, Paris, France 75001</p>
+<p><b>Phone:</b> +33 1 23 45 67 89</p>
+<p><b>Email:</b> reservations@rajalakshmihotels.com</p>
+<p><b>Rating:</b> ⭐⭐⭐⭐⭐ (5 Star)</p>
+
+<hr />
+
+<!-- SEARCH -->
+<h2>Search Availability</h2>
+<form action="#rooms" method="get">
+  <table border="1" cellpadding="8">
+    <tr>
+      <th>Destination</th>
+      <th>Check-In Date</th>
+      <th>Check-Out Date</th>
+      <th>Guests</th>
+      <th>Room Type</th>
+      <th>Action</th>
+    </tr>
+    <tr>
+      <td>
+        <select name="destination">
+          <option>Paris, France</option>
+          <option>Dubai, UAE</option>
+          <option>Tokyo, Japan</option>
+          <option>New York, USA</option>
+          <option>Maldives</option>
+          <option>London, UK</option>
+        </select>
+      </td>
+      <td><input type="date" name="checkin" required /></td>
+      <td><input type="date" name="checkout" required /></td>
+      <td>
+        <select name="guests">
+          <option>1 Guest</option>
+          <option>2 Guests</option>
+          <option>3 Guests</option>
+          <option>4 Guests</option>
+          <option>5+ Guests</option>
+        </select>
+      </td>
+      <td>
+        <select name="roomtype">
+          <option>Any</option>
+          <option>Classic Room</option>
+          <option>Deluxe Room</option>
+          <option>Suite</option>
+          <option>Penthouse</option>
+          <option>Villa</option>
+        </select>
+      </td>
+      <td><input type="submit" value="Search Rooms" /></td>
+    </tr>
+  </table>
+</form>
+
+<hr />
+
+<!-- ROOMS -->
+<h2 id="rooms">Available Rooms &amp; Suites</h2>
+
+<table border="1" cellpadding="10" cellspacing="0">
+  <tr bgcolor="#f0e8d0">
+    <th>Room</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Amenities</th>
+    <th>Max Guests</th>
+    <th>Price/Night</th>
+    <th>Rating</th>
+    <th>Availability</th>
+    <th>Action</th>
+  </tr>
+
+  <tr>
+    <td><b>Classic King Room</b></td>
+    <td>Classic Room</td>
+    <td>Timeless elegance with king bed,<br/>marble bathroom and city views.</td>
+    <td>
+      <ul>
+        <li>King Bed</li>
+        <li>City View</li>
+        <li>Free WiFi</li>
+        <li>Minibar</li>
+        <li>55" Smart TV</li>
+        <li>Air Conditioning</li>
+      </ul>
+    </td>
+    <td>2</td>
+    <td><b>$220</b> / night<br/><small>(incl. breakfast)</small></td>
+    <td>⭐ 4.8</td>
+    <td><font color="green"><b>Available</b></font></td>
+    <td><a href="#booking"><input type="button" value="Book This Room" /></a></td>
+  </tr>
+
+  <tr>
+    <td><b>Deluxe Sea View</b></td>
+    <td>Deluxe Room</td>
+    <td>Spacious room with panoramic<br/>sea views and premium amenities.</td>
+    <td>
+      <ul>
+        <li>Sea View</li>
+        <li>Rain Shower</li>
+        <li>Free WiFi</li>
+        <li>Minibar</li>
+        <li>Private Balcony</li>
+        <li>Room Service</li>
+      </ul>
+    </td>
+    <td>2</td>
+    <td><b>$320</b> / night<br/><small>(incl. breakfast)</small></td>
+    <td>⭐ 4.9</td>
+    <td><font color="green"><b>Available</b></font></td>
+    <td><a href="#booking"><input type="button" value="Book This Room" /></a></td>
+  </tr>
+
+  <tr>
+    <td><b>Junior Suite</b></td>
+    <td>Suite</td>
+    <td>A graceful suite with separate<br/>living area and luxury finishes.</td>
+    <td>
+      <ul>
+        <li>Separate Living Room</li>
+        <li>Soaking Bathtub</li>
+        <li>Butler Service</li>
+        <li>Free WiFi</li>
+        <li>Bar Area</li>
+        <li>Nespresso Machine</li>
+      </ul>
+    </td>
+    <td>3</td>
+    <td><b>$480</b> / night<br/><small>(incl. breakfast)</small></td>
+    <td>⭐ 5.0</td>
+    <td><font color="green"><b>Available</b></font></td>
+    <td><a href="#booking"><input type="button" value="Book This Room" /></a></td>
+  </tr>
+
+  <tr>
+    <td><b>Grand Penthouse</b></td>
+    <td>Penthouse Suite</td>
+    <td>Full-floor penthouse with<br/>360° panoramic city views.</td>
+    <td>
+      <ul>
+        <li>Full Floor</li>
+        <li>Private Pool</li>
+        <li>Private Chef</li>
+        <li>Butler Service</li>
+        <li>Wrap-Around Terrace</li>
+        <li>Home Theatre</li>
+      </ul>
+    </td>
+    <td>4</td>
+    <td><b>$1,200</b> / night<br/><small>(incl. all meals)</small></td>
+    <td>⭐ 5.0</td>
+    <td><font color="orange"><b>Limited</b></font></td>
+    <td><a href="#booking"><input type="button" value="Book This Room" /></a></td>
+  </tr>
+
+  <tr>
+    <td><b>Garden Villa</b></td>
+    <td>Private Villa</td>
+    <td>Secluded villa surrounded by<br/>lush gardens with plunge pool.</td>
+    <td>
+      <ul>
+        <li>Private Plunge Pool</li>
+        <li>Garden View</li>
+        <li>Kitchenette</li>
+        <li>Butler Service</li>
+        <li>2 Bedrooms</li>
+        <li>Private Entrance</li>
+      </ul>
+    </td>
+    <td>5</td>
+    <td><b>$850</b> / night<br/><small>(incl. breakfast)</small></td>
+    <td>⭐ 5.0</td>
+    <td><font color="green"><b>Available</b></font></td>
+    <td><a href="#booking"><input type="button" value="Book This Room" /></a></td>
+  </tr>
+
+  <tr>
+    <td><b>Urban Studio</b></td>
+    <td>Studio Room</td>
+    <td>Chic compact studio perfect<br/>for solo travellers.</td>
+    <td>
+      <ul>
+        <li>Work Desk</li>
+        <li>City View</li>
+        <li>Free WiFi</li>
+        <li>Smart TV</li>
+        <li>Coffee Maker</li>
+        <li>Express Checkout</li>
+      </ul>
+    </td>
+    <td>1</td>
+    <td><b>$180</b> / night<br/><small>(incl. breakfast)</small></td>
+    <td>⭐ 4.7</td>
+    <td><font color="red"><b>Sold Out</b></font></td>
+    <td><input type="button" value="Not Available" disabled /></td>
+  </tr>
+
+</table>
+
+<hr />
+
+<!-- BOOKING FORM -->
+<h2 id="booking">Room Booking Form</h2>
+<p>Please fill in all details below to complete your reservation.</p>
+
+<form action="booking_confirm.html" method="post">
+
+  <h3>1. Select Room</h3>
+  <table border="1" cellpadding="8">
+    <tr>
+      <td><label for="room">Room Type:</label></td>
+      <td>
+        <select name="room" id="room" required>
+          <option value="">-- Select a Room --</option>
+          <option value="classic">Classic King Room — $220/night</option>
+          <option value="deluxe">Deluxe Sea View — $320/night</option>
+          <option value="junior">Junior Suite — $480/night</option>
+          <option value="penthouse">Grand Penthouse — $1,200/night</option>
+          <option value="villa">Garden Villa — $850/night</option>
+          <option value="studio">Urban Studio — $180/night</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="checkin2">Check-In Date:</label></td>
+      <td><input type="date" name="checkin" id="checkin2" required /></td>
+    </tr>
+    <tr>
+      <td><label for="checkout2">Check-Out Date:</label></td>
+      <td><input type="date" name="checkout" id="checkout2" required /></td>
+    </tr>
+    <tr>
+      <td><label for="nights">Number of Nights:</label></td>
+      <td><input type="number" name="nights" id="nights" min="1" max="30" value="1" required /></td>
+    </tr>
+    <tr>
+      <td><label for="rooms_count">Number of Rooms:</label></td>
+      <td>
+        <select name="rooms_count" id="rooms_count">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="guests2">Number of Guests:</label></td>
+      <td>
+        <select name="guests" id="guests2">
+          <option>1 Guest</option>
+          <option>2 Guests</option>
+          <option>3 Guests</option>
+          <option>4 Guests</option>
+          <option>5+ Guests</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+
+  <br />
+
+  <h3>2. Guest Information</h3>
+  <table border="1" cellpadding="8">
+    <tr>
+      <td><label for="fname">First Name:</label></td>
+      <td><input type="text" name="fname" id="fname" placeholder="Enter first name" required /></td>
+      <td><label for="lname">Last Name:</label></td>
+      <td><input type="text" name="lname" id="lname" placeholder="Enter last name" required /></td>
+    </tr>
+    <tr>
+      <td><label for="email">Email Address:</label></td>
+      <td><input type="email" name="email" id="email" placeholder="you@email.com" required /></td>
+      <td><label for="phone">Phone Number:</label></td>
+      <td><input type="tel" name="phone" id="phone" placeholder="+1 555 000 0000" required /></td>
+    </tr>
+    <tr>
+      <td><label for="dob">Date of Birth:</label></td>
+      <td><input type="date" name="dob" id="dob" /></td>
+      <td><label for="nationality">Nationality:</label></td>
+      <td>
+        <select name="nationality" id="nationality">
+          <option>Indian</option>
+          <option>American</option>
+          <option>British</option>
+          <option>French</option>
+          <option>Japanese</option>
+          <option>Australian</option>
+          <option>Canadian</option>
+          <option>Other</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="id_type">ID Type:</label></td>
+      <td>
+        <select name="id_type" id="id_type">
+          <option>Passport</option>
+          <option>Driver's Licence</option>
+          <option>National ID</option>
+          <option>Aadhar Card</option>
+        </select>
+      </td>
+      <td><label for="id_number">ID Number:</label></td>
+      <td><input type="text" name="id_number" id="id_number" placeholder="Enter ID number" required /></td>
+    </tr>
+    <tr>
+      <td><label for="address">Home Address:</label></td>
+      <td colspan="3"><textarea name="address" id="address" rows="3" cols="50" placeholder="Enter your full address"></textarea></td>
+    </tr>
+  </table>
+
+  <br />
+
+  <h3>3. Special Requests</h3>
+  <table border="1" cellpadding="8">
+    <tr>
+      <td>Bed Preference:</td>
+      <td>
+        <input type="radio" name="bed" value="king" /> King Bed &nbsp;
+        <input type="radio" name="bed" value="twin" /> Twin Beds &nbsp;
+        <input type="radio" name="bed" value="any" checked /> No Preference
+      </td>
+    </tr>
+    <tr>
+      <td>Floor Preference:</td>
+      <td>
+        <input type="radio" name="floor" value="high" /> High Floor &nbsp;
+        <input type="radio" name="floor" value="low" /> Low Floor &nbsp;
+        <input type="radio" name="floor" value="any" checked /> No Preference
+      </td>
+    </tr>
+    <tr>
+      <td>Add-ons:</td>
+      <td>
+        <input type="checkbox" name="addon" value="airport" /> Airport Transfer (+$50) &nbsp;
+        <input type="checkbox" name="addon" value="breakfast" /> Extra Breakfast (+$30) &nbsp;
+        <input type="checkbox" name="addon" value="spa" /> Spa Package (+$120) <br />
+        <input type="checkbox" name="addon" value="flowers" /> Welcome Flowers (+$40) &nbsp;
+        <input type="checkbox" name="addon" value="late_checkout" /> Late Checkout (+$60)
+      </td>
+    </tr>
+    <tr>
+      <td>Dietary Needs:</td>
+      <td>
+        <select name="dietary">
+          <option>None</option>
+          <option>Vegetarian</option>
+          <option>Vegan</option>
+          <option>Halal</option>
+          <option>Gluten-Free</option>
+          <option>Kosher</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Other Requests:</td>
+      <td><textarea name="requests" rows="3" cols="50" placeholder="e.g. early check-in, baby cot, accessibility needs..."></textarea></td>
+    </tr>
+  </table>
+
+  <br />
+
+  <h3>4. Payment Details</h3>
+  <table border="1" cellpadding="8">
+    <tr>
+      <td>Payment Method:</td>
+      <td>
+        <input type="radio" name="payment" value="card" checked /> Credit / Debit Card &nbsp;
+        <input type="radio" name="payment" value="upi" /> UPI &nbsp;
+        <input type="radio" name="payment" value="netbanking" /> Net Banking &nbsp;
+        <input type="radio" name="payment" value="paypal" /> PayPal
+      </td>
+    </tr>
+    <tr>
+      <td><label for="cardname">Name on Card:</label></td>
+      <td><input type="text" name="cardname" id="cardname" placeholder="As printed on card" required /></td>
+    </tr>
+    <tr>
+      <td><label for="cardnum">Card Number:</label></td>
+      <td><input type="text" name="cardnum" id="cardnum" placeholder="1234 5678 9012 3456" maxlength="19" required /></td>
+    </tr>
+    <tr>
+      <td><label for="expiry">Expiry Date:</label></td>
+      <td><input type="text" name="expiry" id="expiry" placeholder="MM/YY" maxlength="5" required /></td>
+    </tr>
+    <tr>
+      <td><label for="cvv">CVV:</label></td>
+      <td><input type="password" name="cvv" id="cvv" placeholder="•••" maxlength="4" size="5" required /></td>
+    </tr>
+  </table>
+
+  <br />
+
+  <h3>5. Booking Summary</h3>
+  <table border="1" cellpadding="8" bgcolor="#fffbf0">
+    <tr>
+      <td><b>Room Rate:</b></td>
+      <td>As selected above (per night)</td>
+    </tr>
+    <tr>
+      <td><b>Taxes &amp; Fees:</b></td>
+      <td>12% of total room cost</td>
+    </tr>
+    <tr>
+      <td><b>Cancellation Policy:</b></td>
+      <td>Free cancellation up to 48 hours before check-in</td>
+    </tr>
+    <tr>
+      <td><b>Check-In Time:</b></td>
+      <td>2:00 PM onwards</td>
+    </tr>
+    <tr>
+      <td><b>Check-Out Time:</b></td>
+      <td>12:00 PM (Noon)</td>
+    </tr>
+    <tr>
+      <td><b>Confirmation:</b></td>
+      <td>Sent to your email within 10 minutes</td>
+    </tr>
+  </table>
+
+  <br />
+
+  <p>
+    <input type="checkbox" name="terms" required />
+    I agree to the <a href="#terms">Terms &amp; Conditions</a> and <a href="#privacy">Privacy Policy</a> of Rajalakshmi Hotels.
+  </p>
+
+  <p>
+    <input type="checkbox" name="newsletter" />
+    Subscribe to Rajalakshmi Hotels newsletter for exclusive offers.
+  </p>
+
+  <br />
+  <input type="submit" value="Confirm Booking" />
+  &nbsp;&nbsp;
+  <input type="reset" value="Clear Form" />
+
+</form>
+
+<hr />
+
+<!-- HOTEL FACILITIES -->
+<h2>Hotel Facilities</h2>
+<table border="1" cellpadding="8">
+  <tr bgcolor="#f0e8d0">
+    <th>Facility</th>
+    <th>Details</th>
+    <th>Timing</th>
+    <th>Charges</th>
+  </tr>
+  <tr>
+    <td>🍽 Restaurant</td>
+    <td>Multi-cuisine fine dining restaurant</td>
+    <td>7:00 AM – 11:00 PM</td>
+    <td>Charged separately</td>
+  </tr>
+  <tr>
+    <td>🏊 Swimming Pool</td>
+    <td>Heated rooftop infinity pool</td>
+    <td>6:00 AM – 10:00 PM</td>
+    <td>Free for guests</td>
+  </tr>
+  <tr>
+    <td>💆 Spa &amp; Wellness</td>
+    <td>Full-service spa with 12 treatment rooms</td>
+    <td>8:00 AM – 9:00 PM</td>
+    <td>From $80/session</td>
+  </tr>
+  <tr>
+    <td>🏋 Fitness Centre</td>
+    <td>State-of-the-art gym with trainers</td>
+    <td>24 Hours</td>
+    <td>Free for guests</td>
+  </tr>
+  <tr>
+    <td>🅿 Parking</td>
+    <td>Secure underground valet parking</td>
+    <td>24 Hours</td>
+    <td>$25/day</td>
+  </tr>
+  <tr>
+    <td>📶 WiFi</td>
+    <td>High-speed fibre internet throughout</td>
+    <td>24 Hours</td>
+    <td>Free for guests</td>
+  </tr>
+  <tr>
+    <td>✈ Airport Transfer</td>
+    <td>Private car service to/from airport</td>
+    <td>On request</td>
+    <td>$50 per trip</td>
+  </tr>
+  <tr>
+    <td>🎰 Business Centre</td>
+    <td>Meeting rooms and conference facilities</td>
+    <td>8:00 AM – 8:00 PM</td>
+    <td>From $200/hour</td>
+  </tr>
+</table>
+
+<hr />
+
+<!-- CONTACT -->
+<h2 id="contact">Contact Us</h2>
+<table border="1" cellpadding="8">
+  <tr>
+    <td><b>Front Desk (24/7):</b></td>
+    <td>+33 1 23 45 67 89</td>
+  </tr>
+  <tr>
+    <td><b>Reservations:</b></td>
+    <td>reservations@rajalakshmihotels.com</td>
+  </tr>
+  <tr>
+    <td><b>General Enquiries:</b></td>
+    <td>info@rajalakshmihotels.com</td>
+  </tr>
+  <tr>
+    <td><b>Fax:</b></td>
+    <td>+33 1 23 45 67 90</td>
+  </tr>
+</table>
+
+<br />
+
+<h3>Send Us a Message</h3>
+<form action="mailto:info@rajalakshmihotels.com" method="post">
+  <table border="1" cellpadding="8">
+    <tr>
+      <td><label>Your Name:</label></td>
+      <td><input type="text" name="cname" placeholder="Full name" required /></td>
+    </tr>
+    <tr>
+      <td><label>Your Email:</label></td>
+      <td><input type="email" name="cemail" placeholder="you@email.com" required /></td>
+    </tr>
+    <tr>
+      <td><label>Subject:</label></td>
+      <td>
+        <select name="subject">
+          <option>General Enquiry</option>
+          <option>Reservation Help</option>
+          <option>Feedback / Complaint</option>
+          <option>Corporate Booking</option>
+          <option>Event / Wedding</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label>Message:</label></td>
+      <td><textarea name="message" rows="5" cols="50" placeholder="Write your message here..." required></textarea></td>
+    </tr>
+  </table>
+  <br />
+  <input type="submit" value="Send Message" />
+  <input type="reset" value="Clear" />
+</form>
+
+<hr />
+
+<!-- TERMS -->
+<h2 id="terms">Terms &amp; Conditions</h2>
+<ol>
+  <li>Guests must be 18 years or older to make a reservation.</li>
+  <li>A valid government-issued photo ID is required at check-in.</li>
+  <li>Full payment is required at the time of booking.</li>
+  <li>Free cancellation is available up to 48 hours before check-in.</li>
+  <li>Cancellations within 48 hours of check-in will incur a 1-night charge.</li>
+  <li>Check-in time is 2:00 PM. Early check-in is subject to availability.</li>
+  <li>Check-out time is 12:00 PM. Late check-out may be requested for an additional charge.</li>
+  <li>Smoking is strictly prohibited in all rooms and indoor areas.</li>
+  <li>Pets are not permitted on hotel premises.</li>
+  <li>Rajalakshmi Hotels reserves the right to refuse service to any guest violating hotel policies.</li>
+</ol>
+
+<hr />
+
+<h2 id="privacy">Privacy Policy</h2>
+<p>Rajalakshmi Hotels collects guest information solely for the purpose of processing reservations and improving our services. We do not share your personal data with third parties without your consent. All payment information is encrypted and securely processed. You may request deletion of your data at any time by contacting us.</p>
+
+<hr />
+
+<p align="center">
+  &copy; 2026 <b>Rajalakshmi Hotels &amp; Resorts</b>. All Rights Reserved. &nbsp;|&nbsp;
+  <a href="#about">About</a> &nbsp;|&nbsp;
+  <a href="#rooms">Rooms</a> &nbsp;|&nbsp;
+  <a href="#booking">Book Now</a> &nbsp;|&nbsp;
+  <a href="#contact">Contact</a> &nbsp;|&nbsp;
+  <a href="#terms">Terms</a>
+</p>
+
+</body>
+</html>

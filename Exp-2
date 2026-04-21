@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rajalakshmi Hotels & Resorts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <style>
+
+    /* ── RESET & ROOT ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --maroon:     #7b1c2e;
+      --maroon-dk:  #4e0f1c;
+      --maroon-lt:  #a63248;
+      --gold:       #c9973a;
+      --gold-lt:    #e8c97a;
+      --gold-pale:  #f5ead0;
+      --cream:      #fdf8f0;
+      --white:      #ffffff;
+      --text:       #2e1a1a;
+      --muted:      #7a5c5c;
+      --border:     #e2cdb5;
+      --shadow:     rgba(123,28,46,0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      background: var(--maroon-dk);
+      padding: 0 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid var(--gold);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      padding: 1rem 0;
+    }
+
+    .nav-logo h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--gold-lt);
+      letter-spacing: 0.05em;
+    }
+
+    .nav-logo span {
+      font-size: 0.65rem;
+      color: var(--gold);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      display: block;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 0;
+    }
+
+    .nav-links li a {
+      display: block;
+      padding: 1.4rem 1.4rem;
+      color: #e8d5c0;
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 700;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -3px;
+      transition: color 0.3s, border-color 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: var(--gold-lt);
+      border-bottom-color: var(--gold);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--maroon-dk) 0%, var(--maroon) 50%, #5c1525 100%);
+      padding: 6rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 50%, rgba(201,151,58,0.15) 0%, transparent 70%);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      padding: 0.4rem 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 400;
+      color: var(--gold-lt);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .hero h2 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero p {
+      color: #d4b89a;
+      font-size: 1rem;
+      font-weight: 300;
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      position: relative;
+    }
+
+    .hero-stat {
+      text-align: center;
+    }
+
+    .hero-stat strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--gold-lt);
+      line-height: 1;
+    }
+
+    .hero-stat span {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #c4a07a;
+    }
+
+    /* ── SECTION COMMON ── */
+    section {
+      padding: 5rem 3rem;
+    }
+
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 400;
+      color: var(--maroon-dk);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--maroon-lt);
+    }
+
+    .section-sub {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 3rem;
+      max-width: 550px;
+    }
+
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(to right, var(--gold), transparent);
+      margin: 1rem 0 2.5rem;
+    }
+
+    /* ── SEARCH BAR ── */
+    .search-section {
+      background: var(--maroon);
+      padding: 2.5rem 3rem;
+      border-top: 1px solid var(--maroon-lt);
+      border-bottom: 4px solid var(--gold);
+    }
+
+    .search-section h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--gold-lt);
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 1.2rem;
+    }
+
+    .search-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-end;
+    }
+
+    .search-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      flex: 1;
+      min-width: 150px;
+    }
+
+    .search-field label {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .search-field input,
+    .search-field select {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(201,151,58,0.4);
+      color: #f0dfc0;
+      padding: 0.7rem 1rem;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.88rem;
+      outline: none;
+      transition: border-color 0.3s, background 0.3s;
+    }
+
+    .search-field input:focus,
+    .search-field select:focus {
+      border-color: var(--gold);
+      background: rgba(255,255,255,0.15);
+    }
+
+    .search-field select option { background: var(--maroon-dk); color: #f0dfc0; }
+
+    .search-btn {
+      background: var(--gold);
+      color: var(--maroon-dk);
+      border: none;
+      padding: 0.75rem 2.5rem;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.3s;
+      align-self: flex-end;
+    }
+
+    .search-btn:hover { background: var(--gold-lt); }
+
+    /* ── ABOUT ── */
+    .about-section {
+      background: var(--white);
+      padding: 5rem 3rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    .about-info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+    }
+
+    .about-info-table tr {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-info-table td {
+      padding: 0.75rem 0.5rem;
+      font-size: 0.88rem;
+    }
+
+    .about-info-table td:first-child {
+      font-weight: 700;
+      color: var(--maroon);
+      width: 130px;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .about-info-table td:last-child { color: var(--muted); }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .highlight-card {
+      background: var(--gold-pale);
+      border-left: 3px solid var(--gold);
+      padding: 1.2rem;
+    }
+
+    .highlight-card .icon { font-size: 1.5rem; margin-bottom: 0.4rem; }
+
+    .highlight-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--maroon-dk);
+      margin-bottom: 0.2rem;
+    }
+
+    .highlight-card p { font-size: 0.78rem; color: var(--muted); }
+
+    /* ── ROOMS ── */
+    .rooms-section { background: var(--cream); }
+
+    .rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.8rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .room-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .room-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px var(--shadow);
+    }
+
+    .room-banner {
+      height: 170px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      font-size: 3.5rem;
+    }
+
+    .room-banner.classic  { background: linear-gradient(135deg, #8b6246 0%, #c4956a 100%); }
+    .room-banner.deluxe   { background: linear-gradient(135deg, #1e5546 0%, #3a8a6e 100%); }
+    .room-banner.suite    { background: linear-gradient(135deg, #4e0f1c 0%, #7b1c2e 100%); }
+    .room-banner.pent     { background: linear-gradient(135deg, #1a1a3a 0%, #2e2e6a 100%); }
+    .room-banner.villa    { background: linear-gradient(135deg, #1e3a20 0%, #3a6e3e 100%); }
+    .room-banner.studio   { background: linear-gradient(135deg, #3a2a1e 0%, #6e4e32 100%); }
+
+    .room-tag {
+      position: absolute;
+      top: 0.8rem;
+      left: 0.8rem;
+      background: var(--gold);
+      color: var(--maroon-dk);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.7rem;
+    }
+
+    .avail-dot {
+      position: absolute;
+      top: 0.8rem;
+      right: 0.8rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 0.25rem 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .avail-dot.green  { background: #d4edda; color: #155724; }
+    .avail-dot.orange { background: #fff3cd; color: #856404; }
+    .avail-dot.red    { background: #f8d7da; color: #721c24; }
+
+    .room-body { padding: 1.4rem; }
+
+    .room-type-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .room-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--maroon-dk);
+      margin-bottom: 0.4rem;
+    }
+
+    .room-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .room-amenities {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 1rem;
+    }
+
+    .amenity {
+      font-size: 0.65rem;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 0.2rem 0.55rem;
+      background: var(--gold-pale);
+      letter-spacing: 0.04em;
+    }
+
+    .room-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .room-price strong {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--maroon-dk);
+      display: block;
+      line-height: 1;
+    }
+
+    .room-price small {
+      font-size: 0.68rem;
+      color: var(--muted);
+    }
+
+    .room-rating {
+      font-size: 0.78rem;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .book-link {
+      display: inline-block;
+      background: var(--maroon);
+      color: var(--gold-lt);
+      text-decoration: none;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 700;
+      transition: background 0.3s;
+    }
+
+    .book-link:hover { background: var(--maroon-lt); }
+
+    .book-link.disabled {
+      background: #ccc;
+      color: #888;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+
+    /* ── BOOKING FORM ── */
+    .booking-section { background: var(--white); }
+
+    .booking-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .form-step {
+      background: var(--white);
+      border: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+
+    .form-step-header {
+      background: var(--maroon);
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .step-num {
+      background: var(--gold);
+      color: var(--maroon-dk);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .form-step-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--gold-lt);
+    }
+
+    .form-step-body {
+      padding: 1.8rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .form-group.full { grid-column: 1 / -1; }
+
+    .form-group label {
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--maroon);
+      font-weight: 700;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      border: 1px solid var(--border);
+      background: #faf6f0;
+      padding: 0.75rem 1rem;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.3s, background 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--maroon);
+      background: var(--white);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 90px; }
+
+    .radio-group, .check-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      padding: 0.5rem 0;
+    }
+
+    .radio-group label, .check-group label {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      color: var(--text);
+      cursor: pointer;
+      text-transform: none;
+      letter-spacing: 0;
+      font-weight: 400;
+    }
+
+    .radio-group input[type="radio"],
+    .check-group input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--maroon);
+      padding: 0;
+      border: none;
+    }
+
+    /* ── SUMMARY BOX ── */
+    .summary-box {
+      background: var(--gold-pale);
+      border: 1px solid #e2c88a;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .summary-box h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--maroon-dk);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #e2c88a;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: var(--muted);
+      padding: 0.35rem 0;
+      border-bottom: 1px dashed #e8d9b5;
+    }
+
+    .summary-row:last-child { border-bottom: none; }
+
+    .summary-row.total {
+      font-weight: 700;
+      color: var(--maroon-dk);
+      font-size: 1rem;
+      padding-top: 0.7rem;
+      border-top: 2px solid var(--gold);
+      border-bottom: none;
+      margin-top: 0.3rem;
+    }
+
+    /* ── FORM ACTIONS ── */
+    .form-actions {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .btn-primary {
+      background: var(--maroon);
+      color: var(--gold-lt);
+      border: none;
+      padding: 0.9rem 2.5rem;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn-primary:hover { background: var(--maroon-lt); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 0.9rem 1.8rem;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: border-color 0.3s, color 0.3s;
+    }
+
+    .btn-secondary:hover { border-color: var(--maroon); color: var(--maroon); }
+
+    .terms-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .terms-check input { margin-top: 2px; accent-color: var(--maroon); }
+    .terms-check a { color: var(--maroon); }
+
+    /* ── FACILITIES ── */
+    .facilities-section { background: var(--cream); }
+
+    .facilities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .facility-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .facility-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 4px 16px var(--shadow);
+    }
+
+    .facility-icon { font-size: 1.8rem; flex-shrink: 0; }
+
+    .facility-info h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem;
+      color: var(--maroon-dk);
+      margin-bottom: 0.2rem;
+    }
+
+    .facility-info p { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+
+    .facility-info .timing {
+      font-size: 0.7rem;
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-top: 0.3rem;
+    }
+
+    /* ── CONTACT ── */
+    .contact-section { background: var(--white); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 4rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .contact-details table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .contact-details table tr {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-details table td {
+      padding: 0.8rem 0.5rem;
+      font-size: 0.85rem;
+    }
+
+    .contact-details table td:first-child {
+      font-weight: 700;
+      color: var(--maroon);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      width: 120px;
+    }
+
+    .contact-details table td:last-child { color: var(--muted); }
+
+    /* ── TERMS ── */
+    .terms-section { background: var(--cream); }
+
+    .terms-section ol {
+      max-width: 800px;
+      counter-reset: terms;
+      list-style: none;
+      padding: 0;
+    }
+
+    .terms-section ol li {
+      counter-increment: terms;
+      display: flex;
+      gap: 1rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+      color: var(--muted);
+      align-items: flex-start;
+    }
+
+    .terms-section ol li::before {
+      content: counter(terms, decimal-leading-zero);
+      font-family: 'Playfair Display', serif;
+      font-size: 0.85rem;
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--maroon-dk);
+      border-top: 3px solid var(--gold);
+      padding: 3rem;
+      text-align: center;
+    }
+
+    footer .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--gold-lt);
+      margin-bottom: 0.4rem;
+    }
+
+    footer .footer-tagline {
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    footer .footer-links a {
+      color: #c4a07a;
+      text-decoration: none;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0 1rem;
+      border-right: 1px solid #5e2030;
+      transition: color 0.3s;
+    }
+
+    footer .footer-links a:last-child { border-right: none; }
+    footer .footer-links a:hover { color: var(--gold-lt); }
+
+    footer p {
+      font-size: 0.75rem;
+      color: #8a5060;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 1rem; flex-wrap: wrap; }
+      .nav-links { display: none; }
+      section { padding: 3rem 1.2rem; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .form-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 2rem; flex-wrap: wrap; }
+      .hero { padding: 4rem 1.5rem; }
+      .search-section { padding: 1.5rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVBAR ── -->
+<nav>
+  <div class="nav-logo">
+    <h1>🏨 Rajalakshmi Hotels</h1>
+    <span>Luxury · Heritage · Hospitality</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#rooms">Rooms</a></li>
+    <li><a href="#booking">Book Now</a></li>
+    <li><a href="#facilities">Facilities</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-badge">Est. 1986 · Five Star Collection</div>
+  <h2>Experience <em>Timeless</em><br/>Luxury & Comfort</h2>
+  <p>Where every stay becomes a cherished memory. Welcome to Rajalakshmi Hotels &amp; Resorts — South India's finest hospitality.</p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <strong>38+</strong>
+      <span>Years of Service</span>
+    </div>
+    <div class="hero-stat">
+      <strong>500+</strong>
+      <span>Luxury Rooms</span>
+    </div>
+    <div class="hero-stat">
+      <strong>⭐ 5.0</strong>
+      <span>Star Rating</span>
+    </div>
+    <div class="hero-stat">
+      <strong>12K+</strong>
+      <span>Happy Guests</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── SEARCH ── -->
+<div class="search-section" id="search">
+  <h3>🔍 Search Room Availability</h3>
+  <form class="search-form" action="#rooms" method="get">
+    <div class="search-field">
+      <label for="s-dest">Destination</label>
+      <select id="s-dest" name="destination">
+        <option>Chennai, Tamil Nadu</option>
+        <option>Coimbatore, Tamil Nadu</option>
+        <option>Madurai, Tamil Nadu</option>
+        <option>Bengaluru, Karnataka</option>
+        <option>Hyderabad, Telangana</option>
+        <option>Kochi, Kerala</option>
+      </select>
+    </div>
+    <div class="search-field">
+      <label for="s-checkin">Check-In Date</label>
+      <input type="date" id="s-checkin" name="checkin" required />
+    </div>
+    <div class="search-field">
+      <label for="s-checkout">Check-Out Date</label>
+      <input type="date" id="s-checkout" name="checkout" required />
+    </div>
+    <div class="search-field">
+      <label for="s-guests">Guests</label>
+      <select id="s-guests" name="guests">
+        <option>1 Guest</option>
+        <option>2 Guests</option>
+        <option>3 Guests</option>
+        <option>4 Guests</option>
+        <option>5+ Guests</option>
+      </select>
+    </div>
+    <div class="search-field">
+      <label for="s-type">Room Type</label>
+      <select id="s-type" name="roomtype">
+        <option>Any Type</option>
+        <option>Classic Room</option>
+        <option>Deluxe Room</option>
+        <option>Suite</option>
+        <option>Penthouse</option>
+        <option>Villa</option>
+      </select>
+    </div>
+    <button type="submit" class="search-btn">Search Rooms</button>
+  </form>
+</div>
+
+<!-- ── ABOUT ── -->
+<section class="about-section" id="about">
+  <div class="about-grid">
+    <div>
+      <span class="section-label">Who We Are</span>
+      <h2 class="section-title">About <em>Rajalakshmi</em><br/>Hotels &amp; Resorts</h2>
+      <div class="divider"></div>
+      <p style="color:var(--muted); font-size:0.9rem; margin-bottom:1rem; line-height:1.7;">
+        Since 1986, Rajalakshmi Hotels &amp; Resorts has been the hallmark of luxury hospitality across South India. Founded with a vision to deliver world-class comfort with warm, traditional Indian hospitality, we have grown into a celebrated five-star brand.
+      </p>
+      <p style="color:var(--muted); font-size:0.9rem; line-height:1.7;">
+        Our properties blend contemporary elegance with South Indian cultural richness, offering guests an unforgettable experience in every detail — from cuisine to architecture.
+      </p>
+      <table class="about-info-table">
+        <tr><td>Founded</td><td>1986, Chennai, Tamil Nadu</td></tr>
+        <tr><td>Properties</td><td>6 locations across South India</td></tr>
+        <tr><td>Phone</td><td>+91 44 2345 6789</td></tr>
+        <tr><td>Email</td><td>reservations@rajalakshmihotels.com</td></tr>
+        <tr><td>Rating</td><td>⭐⭐⭐⭐⭐ Five Star</td></tr>
+        <tr><td>Check-In</td><td>2:00 PM onwards</td></tr>
+        <tr><td>Check-Out</td><td>12:00 PM (Noon)</td></tr>
+      </table>
+    </div>
+    <div>
+      <span class="section-label">Why Choose Us</span>
+      <h2 class="section-title" style="font-size:1.6rem;">Our <em>Signature</em> Promise</h2>
+      <div class="divider"></div>
+      <div class="about-highlights">
+        <div class="highlight-card">
+          <div class="icon">🏆</div>
+          <h4>Award Winning</h4>
+          <p>Best Luxury Hotel — South India, 2023 &amp; 2024</p>
+        </div>
+        <div class="highlight-card">
+          <div class="icon">🍛</div>
+          <h4>Authentic Cuisine</h4>
+          <p>Multi-cuisine fine dining with South Indian specialties</p>
+        </div>
+        <div class="highlight-card">
+          <div class="icon">💆</div>
+          <h4>Ayurvedic Spa</h4>
+          <p>Traditional Kerala Ayurveda treatments and wellness</p>
+        </div>
+        <div class="highlight-card">
+          <div class="icon">🛡</div>
+          <h4>Secure Booking</h4>
+          <p>Free cancellation · No hidden fees · Safe payments</p>
+        </div>
+        <div class="highlight-card">
+          <div class="icon">🚗</div>
+          <h4>Airport Transfer</h4>
+          <p>Complimentary pickup for suite &amp; villa guests</p>
+        </div>
+        <div class="highlight-card">
+          <div class="icon">🌿</div>
+          <h4>Eco Certified</h4>
+          <p>Green certified with sustainable hospitality practices</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ROOMS ── -->
+<section class="rooms-section" id="rooms">
+  <div style="max-width:1100px; margin:0 auto;">
+    <span class="section-label">Accommodations</span>
+    <h2 class="section-title">Our <em>Finest</em> Rooms &amp; Suites</h2>
+    <div class="divider"></div>
+    <p class="section-sub">From elegant classic rooms to opulent private villas, every space is thoughtfully designed for your comfort.</p>
+  </div>
+
+  <div class="rooms-grid">
+
+    <!-- Room 1 -->
+    <div class="room-card">
+      <div class="room-banner classic">
+        🛏
+        <span class="room-tag">Popular</span>
+        <span class="avail-dot green">✔ Available</span>
+      </div>
+      <div class="room-body">
+        <div class="room-type-label">Classic Room</div>
+        <h3 class="room-name">Classic King Room</h3>
+        <p class="room-desc">Timeless elegance with king bed, marble bathroom and serene city views.</p>
+        <div class="room-amenities">
+          <span class="amenity">King Bed</span>
+          <span class="amenity">City View</span>
+          <span class="amenity">Free WiFi</span>
+          <span class="amenity">Minibar</span>
+          <span class="amenity">55" Smart TV</span>
+          <span class="amenity">AC</span>
+        </div>
+        <div class="room-footer">
+          <div class="room-price">
+            <strong>₹18,000</strong>
+            <small>per night · incl. breakfast</small>
+          </div>
+          <div>
+            <span class="room-rating">⭐ 4.8</span><br/>
+            <a href="#booking" class="book-link">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Room 2 -->
+    <div class="room-card">
+      <div class="room-banner deluxe">
+        🪟
+        <span class="room-tag">Best Value</span>
+        <span class="avail-dot green">✔ Available</span>
+      </div>
+      <div class="room-body">
+        <div class="room-type-label">Deluxe Room</div>
+        <h3 class="room-name">Deluxe Garden View</h3>
+        <p class="room-desc">Spacious room with lush garden views, rain shower and premium amenities.</p>
+        <div class="room-amenities">
+          <span class="amenity">Garden View</span>
+          <span class="amenity">Rain Shower</span>
+          <span class="amenity">Free WiFi</span>
+          <span class="amenity">Minibar</span>
+          <span class="amenity">Balcony</span>
+          <span class="amenity">Room Service</span>
+        </div>
+        <div class="room-footer">
+          <div class="room-price">
+            <strong>₹26,000</strong>
+            <small>per night · incl. breakfast</small>
+          </div>
+          <div>
+            <span class="room-rating">⭐ 4.9</span><br/>
+            <a href="#booking" class="book-link">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Room 3 -->
+    <div class="room-card">
+      <div class="room-banner suite">
+        🛁
+        <span class="room-tag">Suite</span>
+        <span class="avail-dot green">✔ Available</span>
+      </div>
+      <div class="room-body">
+        <div class="room-type-label">Junior Suite</div>
+        <h3 class="room-name">Royal Junior Suite</h3>
+        <p class="room-desc">A graceful suite with a separate living area, soaking tub and butler service.</p>
+        <div class="room-amenities">
+          <span class="amenity">Living Room</span>
+          <span class="amenity">Soaking Tub</span>
+          <span class="amenity">Butler</span>
+          <span class="amenity">Free WiFi</span>
+          <span class="amenity">Bar Area</span>
+          <span class="amenity">Espresso</span>
+        </div>
+        <div class="room-footer">
+          <div class="room-price">
+            <strong>₹40,000</strong>
+            <small>per night · incl. breakfast</small>
+          </div>
+          <div>
+            <span class="room-rating">⭐ 5.0</span><br/>
+            <a href="#booking" class="book-link">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Room 4 -->
+    <div class="room-card">
+      <div class="room-banner pent">
+        🌆
+        <span class="room-tag">Signature</span>
+        <span class="avail-dot orange">⚠ Limited</span>
+      </div>
+      <div class="room-body">
+        <div class="room-type-label">Penthouse Suite</div>
+        <h3 class="room-name">Grand Penthouse</h3>
+        <p class="room-desc">Our crown jewel — full-floor penthouse with 360° panoramic city views.</p>
+        <div class="room-amenities">
+          <span class="amenity">Full Floor</span>
+          <span class="amenity">Private Pool</span>
+          <span class="amenity">Private Chef</span>
+          <span class="amenity">Butler</span>
+          <span class="amenity">Terrace</span>
+          <span class="amenity">Home Theatre</span>
+        </div>
+        <div class="room-footer">
+          <div class="room-price">
+            <strong>₹1,00,000</strong>
+            <small>per night · all meals incl.</small>
+          </div>
+          <div>
+            <span class="room-rating">⭐ 5.0</span><br/>
+            <a href="#booking" class="book-link">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Room 5 -->
+    <div class="room-card">
+      <div class="room-banner villa">
+        🌴
+        <span class="room-tag">Villa</span>
+        <span class="avail-dot green">✔ Available</span>
+      </div>
+      <div class="room-body">
+        <div class="room-type-label">Private Villa</div>
+        <h3 class="room-name">Heritage Garden Villa</h3>
+        <p class="room-desc">Secluded villa surrounded by lush tropical gardens with a private plunge pool.</p>
+        <div class="room-amenities">
+          <span class="amenity">Plunge Pool</span>
+          <span class="amenity">Garden</span>
+          <span class="amenity">Kitchenette</span>
+          <span class="amenity">Butler</span>
+          <span class="amenity">2 Bedrooms</span>
+          <span class="amenity">Private Entry</span>
+        </div>
+        <div class="room-footer">
+          <div class="room-price">
+            <strong>₹70,000</strong>
+            <small>per night · incl. breakfast</small>
+          </div>
+          <div>
+            <span class="room-rating">⭐ 5.0</span><br/>
+            <a href="#booking" class="book-link">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Room 6 -->
+    <div class="room-card">
+      <div class="room-banner studio">
+        🏙
+        <span class="room-tag">Studio</span>
+        <span class="avail-dot red">✖ Sold Out</span>
+      </div>
+      <div class="room-body">
+        <div class="room-type-label">Studio Room</div>
+        <h3 class="room-name">Urban Studio</h3>
+        <p class="room-desc">A chic, compact studio ideal for solo travellers and short business stays.</p>
+        <div class="room-amenities">
+          <span class="amenity">Work Desk</span>
+          <span class="amenity">City View</span>
+          <span class="amenity">Free WiFi</span>
+          <span class="amenity">Smart TV</span>
+          <span class="amenity">Coffee Maker</span>
+          <span class="amenity">Express Checkout</span>
+        </div>
+        <div class="room-footer">
+          <div class="room-price">
+            <strong>₹14,000</strong>
+            <small>per night · incl. breakfast</small>
+          </div>
+          <div>
+            <span class="room-rating">⭐ 4.7</span><br/>
+            <a href="#" class="book-link disabled">Unavailable</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── BOOKING FORM ── -->
+<section class="booking-section" id="booking">
+  <div style="max-width:860px; margin:0 auto 2.5rem;">
+    <span class="section-label">Reservations</span>
+    <h2 class="section-title">Complete Your <em>Booking</em></h2>
+    <div class="divider"></div>
+    <p class="section-sub">Fill in all details below to confirm your reservation. Secure · No Hidden Fees · Instant Confirmation.</p>
+  </div>
+
+  <div class="booking-wrap">
+    <form action="booking_confirm.html" method="post">
+
+      <!-- STEP 1 -->
+      <div class="form-step">
+        <div class="form-step-header">
+          <div class="step-num">1</div>
+          <h3>Select Your Room &amp; Dates</h3>
+        </div>
+        <div class="form-step-body">
+          <div class="form-grid">
+            <div class="form-group full">
+              <label for="room">Room Type</label>
+              <select name="room" id="room" required>
+                <option value="">-- Select a Room --</option>
+                <option value="classic">Classic King Room — ₹18,000/night</option>
+                <option value="deluxe">Deluxe Garden View — ₹26,000/night</option>
+                <option value="junior">Royal Junior Suite — ₹40,000/night</option>
+                <option value="penthouse">Grand Penthouse — ₹1,00,000/night</option>
+                <option value="villa">Heritage Garden Villa — ₹70,000/night</option>
+                <option value="studio">Urban Studio — ₹14,000/night (Sold Out)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="checkin">Check-In Date</label>
+              <input type="date" name="checkin" id="checkin" required />
+            </div>
+            <div class="form-group">
+              <label for="checkout">Check-Out Date</label>
+              <input type="date" name="checkout" id="checkout" required />
+            </div>
+            <div class="form-group">
+              <label for="nights">Number of Nights</label>
+              <input type="number" name="nights" id="nights" min="1" max="30" value="1" required />
+            </div>
+            <div class="form-group">
+              <label for="rooms_count">Number of Rooms</label>
+              <select name="rooms_count" id="rooms_count">
+                <option>1 Room</option>
+                <option>2 Rooms</option>
+                <option>3 Rooms</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="guests_count">Number of Guests</label>
+              <select name="guests_count" id="guests_count">
+                <option>1 Guest</option>
+                <option>2 Guests</option>
+                <option>3 Guests</option>
+                <option>4 Guests</option>
+                <option>5+ Guests</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="purpose">Purpose of Visit</label>
+              <select name="purpose" id="purpose">
+                <option>Leisure / Vacation</option>
+                <option>Business Travel</option>
+                <option>Honeymoon</option>
+                <option>Family Gathering</option>
+                <option>Wedding / Event</option>
+                <option>Medical / Health</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="form-step">
+        <div class="form-step-header">
+          <div class="step-num">2</div>
+          <h3>Guest Information</h3>
+        </div>
+        <div class="form-step-body">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" name="fname" id="fname" placeholder="Enter first name" required />
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" name="lname" id="lname" placeholder="Enter last name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" name="email" id="email" placeholder="you@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" name="phone" id="phone" placeholder="+91 98765 43210" required />
+            </div>
+            <div class="form-group">
+              <label for="dob">Date of Birth</label>
+              <input type="date" name="dob" id="dob" />
+            </div>
+            <div class="form-group">
+              <label for="nationality">Nationality</label>
+              <select name="nationality" id="nationality">
+                <option>Indian</option>
+                <option>American</option>
+                <option>British</option>
+                <option>Australian</option>
+                <option>Japanese</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="id_type">ID Type</label>
+              <select name="id_type" id="id_type">
+                <option>Aadhar Card</option>
+                <option>Passport</option>
+                <option>Voter ID</option>
+                <option>Driver's Licence</option>
+                <option>PAN Card</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="id_number">ID Number</label>
+              <input type="text" name="id_number" id="id_number" placeholder="Enter ID number" required />
+            </div>
+            <div class="form-group full">
+              <label for="address">Home Address</label>
+              <textarea name="address" id="address" placeholder="Enter your full address"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="form-step">
+        <div class="form-step-header">
+          <div class="step-num">3</div>
+          <h3>Special Requests &amp; Preferences</h3>
+        </div>
+        <div class="form-step-body">
+          <div class="form-grid">
+            <div class="form-group full">
+              <label>Bed Preference</label>
+              <div class="radio-group">
+                <label><input type="radio" name="bed" value="king" /> King Bed</label>
+                <label><input type="radio" name="bed" value="twin" /> Twin Beds</label>
+                <label><input type="radio" name="bed" value="any" checked /> No Preference</label>
+              </div>
+            </div>
+            <div class="form-group full">
+              <label>Floor Preference</label>
+              <div class="radio-group">
+                <label><input type="radio" name="floor" value="high" /> High Floor</label>
+                <label><input type="radio" name="floor" value="low" /> Low Floor</label>
+                <label><input type="radio" name="floor" value="any" checked /> No Preference</label>
+              </div>
+            </div>
+            <div class="form-group full">
+              <label>Add-On Services</label>
+              <div class="check-group">
+                <label><input type="checkbox" name="addon" value="airport" /> Airport Transfer (+₹3,000)</label>
+                <label><input type="checkbox" name="addon" value="breakfast" /> Extra Breakfast (+₹800)</label>
+                <label><input type="checkbox" name="addon" value="spa" /> Spa Package (+₹5,000)</label>
+                <label><input type="checkbox" name="addon" value="flowers" /> Welcome Flowers (+₹1,500)</label>
+                <label><input type="checkbox" name="addon" value="late" /> Late Checkout (+₹2,500)</label>
+                <label><input type="checkbox" name="addon" value="cake" /> Birthday/Anniversary Cake (+₹1,200)</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="dietary">Dietary Preference</label>
+              <select name="dietary" id="dietary">
+                <option>No Preference</option>
+                <option>Vegetarian</option>
+                <option>Vegan</option>
+                <option>Jain</option>
+                <option>Halal</option>
+                <option>Gluten-Free</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label for="requests">Other Special Requests</label>
+              <textarea name="requests" id="requests" placeholder="e.g. early check-in, baby cot, wheelchair access, room near elevator..."></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="form-step">
+        <div class="form-step-header">
+          <div class="step-num">4</div>
+          <h3>Payment Details</h3>
+        </div>
+        <div class="form-step-body">
+          <div class="form-group full" style="margin-bottom:1.2rem;">
+            <label>Payment Method</label>
+            <div class="radio-group">
+              <label><input type="radio" name="payment" value="card" checked /> Credit / Debit Card</label>
+              <label><input type="radio" name="payment" value="upi" /> UPI</label>
+              <label><input type="radio" name="payment" value="netbanking" /> Net Banking</label>
+              <label><input type="radio" name="payment" value="paypal" /> PayPal</label>
+            </div>
+          </div>
+          <div class="form-grid">
+            <div class="form-group full">
+              <label for="cardname">Name on Card</label>
+              <input type="text" name="cardname" id="cardname" placeholder="As printed on card" required />
+            </div>
+            <div class="form-group full">
+              <label for="cardnum">Card Number</label>
+              <input type="text" name="cardnum" id="cardnum" placeholder="1234 5678 9012 3456" maxlength="19" required />
+            </div>
+            <div class="form-group">
+              <label for="expiry">Expiry Date</label>
+              <input type="text" name="expiry" id="expiry" placeholder="MM / YY" maxlength="7" required />
+            </div>
+            <div class="form-group">
+              <label for="cvv">CVV</label>
+              <input type="password" name="cvv" id="cvv" placeholder="•••" maxlength="4" required />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 5 - SUMMARY -->
+      <div class="form-step">
+        <div class="form-step-header">
+          <div class="step-num">5</div>
+          <h3>Booking Summary &amp; Confirmation</h3>
+        </div>
+        <div class="form-step-body">
+          <div class="summary-box">
+            <h4>📋 Reservation Summary</h4>
+            <div class="summary-row"><span>Room Rate (per night)</span><span>As selected above</span></div>
+            <div class="summary-row"><span>Check-In Time</span><span>2:00 PM onwards</span></div>
+            <div class="summary-row"><span>Check-Out Time</span><span>12:00 PM (Noon)</span></div>
+            <div class="summary-row"><span>Taxes &amp; Fees</span><span>12% GST on room rate</span></div>
+            <div class="summary-row"><span>Cancellation Policy</span><span>Free cancellation up to 48 hrs before check-in</span></div>
+            <div class="summary-row"><span>Confirmation</span><span>Sent to email within 10 minutes</span></div>
+            <div class="summary-row total"><span>Total Due</span><span>Calculated at checkout</span></div>
+          </div>
+
+          <div class="terms-check">
+            <input type="checkbox" name="terms" id="terms" required />
+            <label for="terms">I have read and agree to the <a href="#terms-section">Terms &amp; Conditions</a> and <a href="#privacy">Privacy Policy</a> of Rajalakshmi Hotels &amp; Resorts.</label>
+          </div>
+          <div class="terms-check">
+            <input type="checkbox" name="newsletter" id="newsletter" />
+            <label for="newsletter">Subscribe to Rajalakshmi Hotels newsletter for exclusive offers and early-bird deals.</label>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">✔ Confirm Reservation</button>
+            <button type="reset" class="btn-secondary">✖ Clear Form</button>
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</section>
+
+<!-- ── FACILITIES ── -->
+<section class="facilities-section" id="facilities">
+  <div style="max-width:1100px; margin:0 auto 2.5rem;">
+    <span class="section-label">Hotel Amenities</span>
+    <h2 class="section-title">World-Class <em>Facilities</em></h2>
+    <div class="divider"></div>
+    <p class="section-sub">Everything you need for a perfect stay, all under one roof.</p>
+  </div>
+  <div class="facilities-grid" style="max-width:1100px; margin:0 auto;">
+    <div class="facility-card">
+      <div class="facility-icon">🍛</div>
+      <div class="facility-info">
+        <h4>Annapoorna Restaurant</h4>
+        <p>Multi-cuisine fine dining with authentic South Indian and Continental specialties.</p>
+        <div class="timing">7:00 AM – 11:00 PM · Charged separately</div>
+      </div>
+    </div>
+    <div class="facility-card">
+      <div class="facility-icon">🏊</div>
+      <div class="facility-info">
+        <h4>Infinity Pool</h4>
+        <p>Temperature-controlled rooftop pool with panoramic city or garden views.</p>
+        <div class="timing">6:00 AM – 10:00 PM · Free for guests</div>
+      </div>
+    </div>
+    <div class="facility-card">
+      <div class="facility-icon">💆</div>
+      <div class="facility-info">
+        <h4>Ayurveda Spa</h4>
+        <p>Traditional Kerala Ayurveda treatments, body wraps, and wellness therapies.</p>
+        <div class="timing">8:00 AM – 9:00 PM · From ₹2,500/session</div>
+      </div>
+    </div>
+    <div class="facility-card">
+      <div class="facility-icon">🏋</div>
+      <div class="facility-info">
+        <h4>Fitness Centre</h4>
+        <p>State-of-the-art gym with personal trainers and yoga classes available.</p>
+        <div class="timing">24 Hours · Free for guests</div>
+      </div>
+    </div>
+    <div class="facility-card">
+      <div class="facility-icon">🅿</div>
+      <div class="facility-info">
+        <h4>Valet Parking</h4>
+        <p>Secure underground valet parking with CCTV surveillance.</p>
+        <div class="timing">24 Hours · ₹500/day</div>
+      </div>
+    </div>
+    <div class="facility-card">
+      <div class="facility-icon">📶</div>
+      <div class="facility-info">
+        <h4>High-Speed WiFi</h4>
+        <p>Complimentary fibre-optic internet throughout all rooms and public areas.</p>
+        <div class="timing">24 Hours · Free for all guests</div>
+      </div>
+    </div>
+    <div class="facility-card">
+      <div class="facility-icon">✈</div>
+      <div class="facility-info">
+        <h4>Airport Transfer</h4>
+        <p>Comfortable private car transfers to and from the nearest airport.</p>
+        <div class="timing">On request · From ₹3,000/trip</div>
+      </div>
+    </div>
+    <div class="facility-card">
+      <div class="facility-icon">🎭</div>
+      <div class="facility-info">
+        <h4>Banquet &amp; Events</h4>
+        <p>Grand banquet halls for weddings, conferences, and private events up to 1000 guests.</p>
+        <div class="timing">8:00 AM – 11:00 PM · Packages available</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section class="contact-section" id="contact">
+  <div style="max-width:1000px; margin:0 auto 2.5rem;">
+    <span class="section-label">Get In Touch</span>
+    <h2 class="section-title">Contact <em>Us</em></h2>
+    <div class="divider"></div>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-details">
+      <h3 style="font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--maroon-dk); margin-bottom:1rem;">Our Contact Information</h3>
+      <table>
+        <tr><td>Front Desk</td><td>+91 44 2345 6789 (24/7)</td></tr>
+        <tr><td>Reservations</td><td>reservations@rajalakshmihotels.com</td></tr>
+        <tr><td>General</td><td>info@rajalakshmihotels.com</td></tr>
+        <tr><td>WhatsApp</td><td>+91 98765 43210</td></tr>
+        <tr><td>Fax</td><td>+91 44 2345 6790</td></tr>
+        <tr><td>Head Office</td><td>No. 12, Anna Salai, Chennai – 600002</td></tr>
+        <tr><td>GST No.</td><td>33AABCR1234A1ZB</td></tr>
+      </table>
+    </div>
+
+    <div>
+      <h3 style="font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--maroon-dk); margin-bottom:1rem;">Send Us a Message</h3>
+      <form action="mailto:info@rajalakshmihotels.com" method="post" enctype="text/plain">
+        <div class="form-grid" style="margin-bottom:1rem;">
+          <div class="form-group">
+            <label for="cname">Your Name</label>
+            <input type="text" name="cname" id="cname" placeholder="Full name" required />
+          </div>
+          <div class="form-group">
+            <label for="cemail">Email Address</label>
+            <input type="email" name="cemail" id="cemail" placeholder="you@email.com" required />
+          </div>
+          <div class="form-group full">
+            <label for="subject">Subject</label>
+            <select name="subject" id="subject">
+              <option>General Enquiry</option>
+              <option>Reservation Help</option>
+              <option>Feedback / Complaint</option>
+              <option>Corporate Booking</option>
+              <option>Event / Wedding</option>
+              <option>Careers</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label for="message">Message</label>
+            <textarea name="message" id="message" rows="5" placeholder="Write your message here..." required></textarea>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">Send Message</button>
+          <button type="reset" class="btn-secondary">Clear</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ── TERMS ── -->
+<section class="terms-section" id="terms-section">
+  <div style="max-width:860px; margin:0 auto;">
+    <span class="section-label">Legal</span>
+    <h2 class="section-title">Terms &amp; <em>Conditions</em></h2>
+    <div class="divider"></div>
+    <ol>
+      <li>Guests must be 18 years or older to make a reservation at Rajalakshmi Hotels &amp; Resorts.</li>
+      <li>A valid government-issued photo ID (Aadhar, Passport, Voter ID, or Driving Licence) is required at check-in.</li>
+      <li>Full payment is required at the time of booking to confirm your reservation.</li>
+      <li>Free cancellation is available up to 48 hours before check-in. Cancellations within 48 hours will incur a 1-night charge.</li>
+      <li>Check-in time is 2:00 PM. Early check-in is subject to room availability and may attract additional charges.</li>
+      <li>Check-out time is 12:00 PM (Noon). Late check-out up to 6:00 PM can be arranged for ₹2,500 (subject to availability).</li>
+      <li>Smoking is strictly prohibited in all rooms and enclosed indoor areas. A cleaning fee of ₹5,000 will be charged for violations.</li>
+      <li>Pets are not permitted anywhere on hotel premises.</li>
+      <li>Guests are responsible for any damage caused to hotel property during their stay.</li>
+      <li>Rajalakshmi Hotels reserves the right to refuse service to any guest violating hotel policies or local laws.</li>
+      <li>All tariffs are subject to applicable GST as per Indian government regulations.</li>
+      <li>Rajalakshmi Hotels is not responsible for any loss or theft of personal belongings. Use of the in-room safe is recommended.</li>
+    </ol>
+
+    <br/>
+    <h2 class="section-title" id="privacy" style="font-size:1.6rem;">Privacy <em>Policy</em></h2>
+    <div class="divider"></div>
+    <p style="color:var(--muted); font-size:0.88rem; line-height:1.8; max-width:800px;">
+      Rajalakshmi Hotels &amp; Resorts collects guest information solely for the purpose of processing reservations and improving our services. We do not sell or share your personal data with third parties without your explicit consent. All payment information is encrypted using industry-standard SSL technology and securely processed. We store your data in compliance with applicable Indian data protection laws. You may request access to, correction of, or deletion of your personal data at any time by writing to <strong>privacy@rajalakshmihotels.com</strong>.
+    </p>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-logo">🏨 Rajalakshmi Hotels &amp; Resorts</div>
+  <div class="footer-tagline">Luxury · Heritage · Warm South Indian Hospitality</div>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#rooms">Rooms</a>
+    <a href="#booking">Book Now</a>
+    <a href="#facilities">Facilities</a>
+    <a href="#contact">Contact</a>
+    <a href="#terms-section">Terms</a>
+    <a href="#privacy">Privacy</a>
+  </div>
+  <p>&copy; 2026 Rajalakshmi Hotels &amp; Resorts. All Rights Reserved. | Chennai, Tamil Nadu, India</p>
+</footer>
+
+</body>
+</html>
